@@ -49,11 +49,11 @@ gdjs._26410_21629_21517_22580_26223Code.GDRank3TextObjects1= [];
 gdjs._26410_21629_21517_22580_26223Code.GDRank3TextObjects2= [];
 
 
-gdjs._26410_21629_21517_22580_26223Code.userFunc0x91c0f0 = function GDJSInlineCode(runtimeScene) {
+gdjs._26410_21629_21517_22580_26223Code.userFunc0x8f8830 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 
 };
-gdjs._26410_21629_21517_22580_26223Code.userFunc0x92f9b8 = function GDJSInlineCode(runtimeScene) {
+gdjs._26410_21629_21517_22580_26223Code.userFunc0x900668 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const scene = runtimeScene;
 const input = scene.getGame().getInputManager();
@@ -119,8 +119,8 @@ if (typeof window.rankLoaded === 'undefined') {
         else { scene.getObjects("Rank3Text")[0]?.setString("3rd: 暫無資料"); }
     };
 
-    // 初始開局載入排行榜
-    fetch('http://127.0.0.1/postscore', {
+    // 🚀 修正 1：開局載入排行榜網址更新為 Render 雲端環境
+    fetch('https://game-vsk1.onrender.com/postscore', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: "", score: -1 }) // 發送無效分數僅用於撈取目前排行資料
@@ -213,8 +213,8 @@ if (c.active) {
             window.gameIsEnding = true;
             const msg = getStatsMsg("竟敢躲著我！分手吧！");
             
-            // 💡 調整：上傳名字統一使用 "Player"，只紀錄純分數
-            fetch('http://127.0.0.1/postscore', {
+            // 🚀 修正 2：安全區失敗上傳分數網址更新為 Render 雲端環境
+            fetch('https://game-vsk1.onrender.com/postscore', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: "Player", score: window.gameScore })
@@ -322,8 +322,8 @@ obstacles.forEach(name => {
                     window.gameIsEnding = true; 
                     const msg = getStatsMsg("哎呀！被砸中了！");
                     
-                    // 💡 調整：上傳名字統一使用 "Player"，只紀錄純分數
-                    fetch('http://127.0.0.1/postscore', {
+                    // 🚀 修正 3 : 死亡血量歸零上傳分數網址更新為 Render 雲端環境
+                    fetch('https://game-vsk1.onrender.com/postscore', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ name: "Player", score: window.gameScore })
@@ -358,7 +358,7 @@ gdjs._26410_21629_21517_22580_26223Code.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs._26410_21629_21517_22580_26223Code.userFunc0x91c0f0(runtimeScene);
+gdjs._26410_21629_21517_22580_26223Code.userFunc0x8f8830(runtimeScene);
 
 }
 
@@ -376,7 +376,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs._26410_21629_21517_22580_26223Code.userFunc0x92f9b8(runtimeScene);
+gdjs._26410_21629_21517_22580_26223Code.userFunc0x900668(runtimeScene);
 
 }
 
